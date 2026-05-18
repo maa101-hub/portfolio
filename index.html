@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sourabh Ramteke | Full-Stack Java Developer</title>
+    <meta name="description" content="Portfolio of Sourabh Ramteke - Full-Stack Java Developer, Software Engineer, DSA Enthusiast"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SR<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Hire Me</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Sourabh <span class="highlight">Ramteke</span></h1>
+                <div class="hero-title">
+                    <span class="title-prefix">I'm a </span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+                <p class="hero-description">
+                    Full-Stack Java Developer & MCA candidate at <strong>NIT Trichy</strong> with expertise in 
+                    Spring Boot Microservices, React.js, and scalable backend systems. 
+                    Passionate about building production-grade applications.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1300">0</span>+
+                        <span class="stat-label">Problems Solved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1800">0</span>+
+                        <span class="stat-label">LC Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4">0</span>+
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#" class="btn btn-outline" id="resumeBtn">
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/maa101-hub" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sourabh_ramteke" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="social-link"><i class="fas fa-code"></i></a>
+                    <a href="https://medium.com/@sourabhramteke1311" target="_blank" class="social-link"><i class="fab fa-medium"></i></a>
+                    <a href="mailto:sourabhramteke1311@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="image-border"></div>
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span>Your Photo</span>
+                    </div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fab fa-java"></i> Java
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fab fa-react"></i> React
+                </div>
+                <div class="floating-badge badge-3">
+                    <i class="fas fa-leaf"></i> Spring Boot
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span> About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a <strong>Full-Stack Java Developer</strong> and MCA candidate at 
+                        <strong>NIT Trichy</strong> with proven experience building production-grade 
+                        microservices, REST APIs, and AI-powered applications.
+                    </p>
+                    <p>
+                        Skilled in Spring Boot, Apache Kafka, WebSockets, and cloud deployment. 
+                        I've delivered end-to-end systems including a scalable airline booking platform 
+                        and a real-time social networking platform. Strong collaborator with a track record 
+                        of clean, maintainable code in Agile environments.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>MCA — NIT Trichy</strong>
+                                <span>CGPA: 7.6 | 2023 - 2026</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <strong>B.Sc. CS — Govt. Holkar Science College</strong>
+                                <span>80.63% | 2020 - 2022</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Balaghat, Madhya Pradesh, India</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>Current Role</strong>
+                                <span>SDE Intern @ Mphasis, Hyderabad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">sourabh.json</span>
+                        </div>
+                        <pre class="code-content"><code>{
+  <span class="key">"name"</span>: <span class="value">"Sourabh Ramteke"</span>,
+  <span class="key">"role"</span>: <span class="value">"Full-Stack Java Developer"</span>,
+  <span class="key">"education"</span>: <span class="value">"MCA @ NIT Trichy"</span>,
+  <span class="key">"experience"</span>: <span class="value">"SDE Intern @ Mphasis"</span>,
+  <span class="key">"languages"</span>: [<span class="value">"Java"</span>, <span class="value">"JS"</span>, <span class="value">"Python"</span>],
+  <span class="key">"passion"</span>: <span class="value">"Building scalable systems"</span>,
+  <span class="key">"dsa"</span>: <span class="value">"1300+ problems solved"</span>,
+  <span class="key">"available"</span>: <span class="bool">true</span>
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span> Tech Stack
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Spring Security</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">WebSockets</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Zustand</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Socket.IO</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">JWT & RBAC</span>
+                        <span class="skill-tag">AOP</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Cloud Deployment</span>
+                        <span class="skill-tag">System Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span> Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Engineer Intern</h3>
+                                <h4><i class="fas fa-building"></i> Mphasis IT & Services, Hyderabad</h4>
+                            </div>
+                            <span class="timeline-date">Feb 2026 – May 2026</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Built and shipped production features end-to-end within Agile sprint cycles, contributing across the full SDLC.</li>
+                            <li>Developed and tested RESTful APIs in Java and Spring Boot with enterprise patterns — layered architecture, centralized exception handling.</li>
+                            <li>Collaborated with cross-functional teams (Dev, QA, PM) on sprint planning, code reviews, and iterative feature delivery.</li>
+                            <li>Deepened expertise in backend architecture best practices within a large-scale corporate codebase.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span> Featured Projects
+            </h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/maa101-hub/SkyWaysAirline_Project" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-plane"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SkyWays — Airline Booking System</h3>
+                        <p>Scalable airline booking platform using Spring Boot Microservices with flight search, dynamic fare calculation, seat management, and Razorpay integration.</p>
+                        <ul class="project-features">
+                            <li>Microservices architecture with independent services</li>
+                            <li>JWT + RBAC authentication</li>
+                            <li>Apache Kafka for async notifications</li>
+                            <li>Razorpay payment gateway</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Java</span><span>Spring Boot</span><span>React.js</span><span>MySQL</span><span>Kafka</span><span>JWT</span><span>Razorpay</span>
+                        </div>
+                        <div class="project-date">Feb 2026 – May 2026</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/maa101-hub" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Campus Connect — Social Networking Platform</h3>
+                        <p>Microservices-based social networking platform supporting user profiles, posts, follows, and real-time messaging for campus communities.</p>
+                        <ul class="project-features">
+                            <li>Real-time WebSocket chat & feed updates</li>
+                            <li>JWT + OTP verification security</li>
+                            <li>Spring Boot Actuator + AOP logging</li>
+                            <li>Zustand state management</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Java</span><span>Spring Boot</span><span>React.js</span><span>WebSocket</span><span>MySQL</span><span>Zustand</span>
+                        </div>
+                        <div class="project-date">Nov 2025 – Apr 2026</div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/maa101-hub" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Resume & Interview Coach</h3>
+                        <p>Full-stack AI career tool powered by Google Gemini LLM for intelligent resume analysis, ATS scoring, and AI mock interviews with real-time feedback.</p>
+                        <ul class="project-features">
+                            <li>ATS scoring engine with keyword gap analysis</li>
+                            <li>AI mock interview with auto-scoring</li>
+                            <li>Google Gemini LLM integration</li>
+                            <li>Deployed on Vercel + Render</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>React.js</span><span>FastAPI</span><span>Python</span><span>Gemini API</span><span>Vercel</span><span>Render</span>
+                        </div>
+                        <div class="project-date">Jan 2025 – Mar 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span> DSA & Achievements
+            </h2>
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon leetcode">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>LeetCode</h3>
+                    <div class="achievement-stat">
+                        <span class="achievement-number" data-target="700">0</span>+
+                    </div>
+                    <p>Problems Solved</p>
+                    <span class="achievement-badge">Rating: 1800+</span>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="achievement-icon gfg">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>GeeksforGeeks</h3>
+                    <div class="achievement-stat">
+                        <span class="achievement-number" data-target="600">0</span>+
+                    </div>
+                    <p>Problems Solved</p>
+                    <span class="achievement-badge">Strong Coder</span>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="achievement-icon hack">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>HackIndia 2025</h3>
+                    <div class="achievement-stat-text">
+                        LIET UP West Regionals
+                    </div>
+                    <p>Oct 2025</p>
+                    <span class="achievement-badge">Hackathon</span>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="achievement-icon amazon">
+                        <i class="fab fa-amazon"></i>
+                    </div>
+                    <h3>Amazon HackOn S4</h3>
+                    <div class="achievement-stat-text">
+                        Coding Round Cleared
+                    </div>
+                    <p>Jun 2024</p>
+                    <span class="achievement-badge">Amazon</span>
+                </div>
+            </div>
+            <div class="dsa-platforms">
+                <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="platform-link">
+                    <i class="fas fa-external-link-alt"></i> LeetCode Profile
+                </a>
+                <a href="https://auth.geeksforgeeks.org/user/sourabhracv1w" target="_blank" class="platform-link">
+                    <i class="fas fa-external-link-alt"></i> GFG Profile
+                </a>
+                <a href="https://codeforces.com/profile/sour1311" target="_blank" class="platform-link">
+                    <i class="fas fa-external-link-alt"></i> Codeforces
+                </a>
+                <a href="https://www.codechef.com/users/sourabh7283" target="_blank" class="platform-link">
+                    <i class="fas fa-external-link-alt"></i> CodeChef
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span> Get In Touch
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm currently looking for full-time SDE opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sourabhramteke1311@gmail.com">sourabhramteke1311@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91-7089046319</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Balaghat, Madhya Pradesh, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/maa101-hub" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/sourabh_ramteke" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://medium.com/@sourabhramteke1311" target="_blank"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/s_ramteke13" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required/>
+                        <label for="name"><i class="fas fa-user"></i></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required/>
+                        <label for="email"><i class="fas fa-envelope"></i></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject" required/>
+                        <label for="subject"><i class="fas fa-tag"></i></label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message"><i class="fas fa-comment"></i></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>SR<span class="logo-bracket">/&gt;</span>
+                    <p>Building the future, one commit at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/maa101-hub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sourabh_ramteke" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.leetcode.com/sourabh_101" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="mailto:sourabhramteke1311@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sourabh Ramteke. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart" style="color: #ef4444;"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
