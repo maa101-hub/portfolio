@@ -474,6 +474,16 @@ ul {
     color: var(--text-muted);
 }
 
+.profile-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg);
+    z-index: 1;
+}
+
 .floating-badge {
     position: absolute;
     background: var(--bg-card);
