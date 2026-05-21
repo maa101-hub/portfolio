@@ -295,6 +295,12 @@ ul {
     justify-content: center;
 }
 
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -931,10 +937,12 @@ ul {
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
+    pointer-events: none;
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .project-link {
