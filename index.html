@@ -7,13 +7,42 @@
     <meta name="description" content="Portfolio of Sourabh Ramteke - Full-Stack Java Developer, Software Engineer, DSA Enthusiast"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-cube">
+                <div class="cube-face front">SR</div>
+                <div class="cube-face back">SR</div>
+                <div class="cube-face right">SR</div>
+                <div class="cube-face left">SR</div>
+                <div class="cube-face top">SR</div>
+                <div class="cube-face bottom">SR</div>
+            </div>
+            <div class="preloader-text">Loading Portfolio...</div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Particle Background -->
     <canvas id="particles"></canvas>
+
+    <!-- Background Gradient Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
 
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
@@ -38,7 +67,7 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
                 </button>
-                <a href="#contact" class="nav-cta">Hire Me</a>
+                <a href="#contact" class="nav-cta magnetic-btn">Hire Me</a>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -48,57 +77,66 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-elements">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-grid-lines"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Sourabh <span class="highlight">Ramteke</span></h1>
-                <div class="hero-title">
+                <p class="hero-greeting reveal-item" data-delay="0">
+                    <span class="greeting-line"></span>Hello, I'm
+                </p>
+                <h1 class="hero-name reveal-item" data-delay="1">Sourabh <span class="highlight">Ramteke</span></h1>
+                <div class="hero-title reveal-item" data-delay="2">
                     <span class="title-prefix">I'm a </span>
                     <span class="typewriter" id="typewriter"></span>
                     <span class="cursor-blink">|</span>
                 </div>
-                <p class="hero-description">
+                <p class="hero-description reveal-item" data-delay="3">
                     Full-Stack Java Developer & MCA candidate at <strong>NIT Trichy</strong> with expertise in 
                     Spring Boot Microservices, React.js, and scalable backend systems. 
                     Passionate about building production-grade applications.
                 </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
+                <div class="hero-stats reveal-item" data-delay="4">
+                    <div class="stat-item glass-card">
                         <span class="stat-number" data-target="1300">0</span>+
                         <span class="stat-label">Problems Solved</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item glass-card">
                         <span class="stat-number" data-target="1800">0</span>+
                         <span class="stat-label">LC Rating</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item glass-card">
                         <span class="stat-number" data-target="4">0</span>+
                         <span class="stat-label">Projects Built</span>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
+                <div class="hero-buttons reveal-item" data-delay="5">
+                    <a href="#projects" class="btn btn-primary magnetic-btn">
                         <i class="fas fa-rocket"></i> View Projects
+                        <span class="btn-glow"></span>
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
+                    <a href="#contact" class="btn btn-secondary magnetic-btn">
                         <i class="fas fa-envelope"></i> Contact Me
                     </a>
-                    <a href="asset/sourabhresume.pdf" class="btn btn-outline" id="resumeBtn" download>
+                    <a href="asset/sourabhresume.pdf" class="btn btn-outline magnetic-btn" id="resumeBtn" download>
                         <i class="fas fa-download"></i> Resume
                     </a>
                 </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/maa101-hub" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/sourabh_ramteke" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="social-link"><i class="fas fa-code"></i></a>
-                    <a href="https://medium.com/@sourabhramteke1311" target="_blank" class="social-link"><i class="fab fa-medium"></i></a>
-                    <a href="mailto:sourabhramteke1311@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <div class="hero-socials reveal-item" data-delay="6">
+                    <a href="https://github.com/maa101-hub" target="_blank" class="social-link magnetic-btn"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sourabh_ramteke" target="_blank" class="social-link magnetic-btn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="social-link magnetic-btn"><i class="fas fa-code"></i></a>
+                    <a href="https://medium.com/@sourabhramteke1311" target="_blank" class="social-link magnetic-btn"><i class="fab fa-medium"></i></a>
+                    <a href="mailto:sourabhramteke1311@gmail.com" class="social-link magnetic-btn"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
+            <div class="hero-image" id="heroImage">
+                <div class="image-wrapper tilt-card">
                     <div class="image-border"></div>
                     <img src="asset/img.jpeg" alt="Sourabh Ramteke" class="profile-image"/>
+                    <div class="image-glow"></div>
                 </div>
                 <div class="floating-badge badge-1">
                     <i class="fab fa-java"></i> Java
@@ -109,6 +147,7 @@
                 <div class="floating-badge badge-3">
                     <i class="fas fa-leaf"></i> Spring Boot
                 </div>
+                <div class="orbit-ring"></div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -121,46 +160,47 @@
 
     <!-- About Section -->
     <section id="about" class="section about">
+        <div class="section-bg-accent"></div>
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">01.</span> About Me
             </h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-intro">
+                    <p class="about-intro reveal-up">
                         I'm a <strong>Full-Stack Java Developer</strong> and MCA candidate at 
                         <strong>NIT Trichy</strong> with proven experience building production-grade 
                         microservices, REST APIs, and AI-powered applications.
                     </p>
-                    <p>
+                    <p class="reveal-up">
                         Skilled in Spring Boot, Apache Kafka, WebSockets, and cloud deployment. 
                         I've delivered end-to-end systems including a scalable airline booking platform 
                         and a real-time social networking platform. Strong collaborator with a track record 
                         of clean, maintainable code in Agile environments.
                     </p>
                     <div class="about-details">
-                        <div class="detail-item">
+                        <div class="detail-item reveal-left">
                             <i class="fas fa-graduation-cap"></i>
                             <div>
                                 <strong>MCA — NIT Trichy</strong>
                                 <span>CGPA: 7.6 | 2023 - 2026</span>
                             </div>
                         </div>
-                        <div class="detail-item">
+                        <div class="detail-item reveal-left">
                             <i class="fas fa-university"></i>
                             <div>
                                 <strong>B.Sc. CS — Govt. Holkar Science College</strong>
                                 <span>80.63% | 2020 - 2022</span>
                             </div>
                         </div>
-                        <div class="detail-item">
+                        <div class="detail-item reveal-left">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>Location</strong>
                                 <span>Balaghat, Madhya Pradesh, India</span>
                             </div>
                         </div>
-                        <div class="detail-item">
+                        <div class="detail-item reveal-left">
                             <i class="fas fa-briefcase"></i>
                             <div>
                                 <strong>Current Role</strong>
@@ -169,8 +209,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-card">
-                    <div class="code-window">
+                <div class="about-card reveal-right">
+                    <div class="code-window tilt-card">
                         <div class="window-header">
                             <div class="window-dots">
                                 <span class="dot red"></span>
@@ -198,11 +238,12 @@
     <!-- Skills Section -->
     <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">02.</span> Tech Stack
             </h2>
             <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up">
+                <div class="skill-category tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="category-icon"><i class="fas fa-code"></i></div>
                     <h3>Languages</h3>
                     <div class="skill-tags">
@@ -214,7 +255,8 @@
                         <span class="skill-tag">C</span>
                     </div>
                 </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-category tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="category-icon"><i class="fas fa-server"></i></div>
                     <h3>Backend</h3>
                     <div class="skill-tags">
@@ -227,7 +269,8 @@
                         <span class="skill-tag">REST APIs</span>
                     </div>
                 </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-category tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="category-icon"><i class="fas fa-palette"></i></div>
                     <h3>Frontend</h3>
                     <div class="skill-tags">
@@ -239,7 +282,8 @@
                         <span class="skill-tag">CSS3</span>
                     </div>
                 </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-category tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="category-icon"><i class="fas fa-database"></i></div>
                     <h3>Database & Tools</h3>
                     <div class="skill-tags">
@@ -251,7 +295,8 @@
                         <span class="skill-tag">Postman</span>
                     </div>
                 </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="category-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Concepts</h3>
                     <div class="skill-tags">
@@ -270,13 +315,17 @@
     <!-- Experience Section -->
     <section id="experience" class="section experience">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">03.</span> Experience
             </h2>
             <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
+                <div class="timeline-line" id="timelineLine"></div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-ring"></div>
+                    </div>
+                    <div class="timeline-card tilt-card">
+                        <div class="card-shine"></div>
                         <div class="timeline-header">
                             <div>
                                 <h3>Software Engineer Intern</h3>
@@ -302,13 +351,15 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">04.</span> Featured Projects
             </h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="project-image">
+                        <div class="project-aurora"></div>
                         <div class="project-overlay">
                             <a href="https://github.com/maa101-hub/SkyWaysAirline_Project" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
                         </div>
@@ -332,8 +383,10 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="project-image">
+                        <div class="project-aurora"></div>
                         <div class="project-overlay">
                             <a href="https://github.com/maa101-hub/campus-connect" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
                         </div>
@@ -357,8 +410,10 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card tilt-card reveal-up">
+                    <div class="card-shine"></div>
                     <div class="project-image">
+                        <div class="project-aurora"></div>
                         <div class="project-overlay">
                             <a href="https://github.com/maa101-hub" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
                         </div>
@@ -387,11 +442,12 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section achievements">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">05.</span> DSA & Achievements
             </h2>
             <div class="achievements-grid">
-                <div class="achievement-card" data-aos="zoom-in">
+                <div class="achievement-card tilt-card reveal-scale">
+                    <div class="card-shine"></div>
                     <div class="achievement-icon leetcode">
                         <i class="fas fa-code"></i>
                     </div>
@@ -402,7 +458,8 @@
                     <p>Problems Solved</p>
                     <span class="achievement-badge">Rating: 1800+</span>
                 </div>
-                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="achievement-card tilt-card reveal-scale">
+                    <div class="card-shine"></div>
                     <div class="achievement-icon gfg">
                         <i class="fas fa-laptop-code"></i>
                     </div>
@@ -413,7 +470,8 @@
                     <p>Problems Solved</p>
                     <span class="achievement-badge">Strong Coder</span>
                 </div>
-                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="achievement-card tilt-card reveal-scale">
+                    <div class="card-shine"></div>
                     <div class="achievement-icon hack">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -424,7 +482,8 @@
                     <p>Oct 2025</p>
                     <span class="achievement-badge">Hackathon</span>
                 </div>
-                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="achievement-card tilt-card reveal-scale">
+                    <div class="card-shine"></div>
                     <div class="achievement-icon amazon">
                         <i class="fab fa-amazon"></i>
                     </div>
@@ -436,17 +495,17 @@
                     <span class="achievement-badge">Amazon</span>
                 </div>
             </div>
-            <div class="dsa-platforms">
-                <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="platform-link">
+            <div class="dsa-platforms reveal-up">
+                <a href="https://www.leetcode.com/sourabh_101" target="_blank" class="platform-link magnetic-btn">
                     <i class="fas fa-external-link-alt"></i> LeetCode Profile
                 </a>
-                <a href="https://auth.geeksforgeeks.org/user/sourabhracv1w" target="_blank" class="platform-link">
+                <a href="https://auth.geeksforgeeks.org/user/sourabhracv1w" target="_blank" class="platform-link magnetic-btn">
                     <i class="fas fa-external-link-alt"></i> GFG Profile
                 </a>
-                <a href="https://codeforces.com/profile/sour1311" target="_blank" class="platform-link">
+                <a href="https://codeforces.com/profile/sour1311" target="_blank" class="platform-link magnetic-btn">
                     <i class="fas fa-external-link-alt"></i> Codeforces
                 </a>
-                <a href="https://www.codechef.com/users/sourabh7283" target="_blank" class="platform-link">
+                <a href="https://www.codechef.com/users/sourabh7283" target="_blank" class="platform-link magnetic-btn">
                     <i class="fas fa-external-link-alt"></i> CodeChef
                 </a>
             </div>
@@ -456,11 +515,11 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title reveal-up">
                 <span class="title-number">06.</span> Get In Touch
             </h2>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info reveal-left">
                     <h3>Let's Work Together</h3>
                     <p>I'm currently looking for full-time SDE opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!</p>
                     <div class="contact-details">
@@ -484,25 +543,31 @@
                         <a href="https://instagram.com/s_ramteke13" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form glass-form reveal-right" id="contactForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required/>
-                        <label for="name"><i class="fas fa-user"></i></label>
+                        <input type="text" id="name" placeholder=" " required/>
+                        <label for="name">Your Name</label>
+                        <div class="form-line"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required/>
-                        <label for="email"><i class="fas fa-envelope"></i></label>
+                        <input type="email" id="email" placeholder=" " required/>
+                        <label for="email">Your Email</label>
+                        <div class="form-line"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" placeholder="Subject" required/>
-                        <label for="subject"><i class="fas fa-tag"></i></label>
+                        <input type="text" id="subject" placeholder=" " required/>
+                        <label for="subject">Subject</label>
+                        <div class="form-line"></div>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                        <label for="message"><i class="fas fa-comment"></i></label>
+                        <textarea id="message" placeholder=" " rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="form-line"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">
+                    <button type="submit" class="btn btn-primary btn-full magnetic-btn">
                         <i class="fas fa-paper-plane"></i> Send Message
+                        <span class="btn-glow"></span>
+                        <span class="btn-ripple"></span>
                     </button>
                 </form>
             </div>
